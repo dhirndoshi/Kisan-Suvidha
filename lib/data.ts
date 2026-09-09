@@ -1,0 +1,26 @@
+import {Crop,Centre,Booking} from '@/types';
+export const crops:Crop[]=[
+{id:'rice',name:'Rice',price:2150,previous:2080,movement:3.37,demand:'High',season:'Kharif',sowing:'June–July',yieldPerAcre:22,image:'🌾',water:'High',bestMonths:'June, July',description:'Staple grain with strong procurement demand and predictable MSP-linked markets.'},
+{id:'wheat',name:'Wheat',price:2425,previous:2380,movement:1.89,demand:'High',season:'Rabi',sowing:'November–December',yieldPerAcre:19,image:'🌾',water:'Medium',bestMonths:'November, December',description:'Reliable rabi crop with established government procurement networks.'},
+{id:'maize',name:'Maize',price:2260,previous:2310,movement:-2.16,demand:'High',season:'Kharif/Rabi',sowing:'June–July / Oct–Nov',yieldPerAcre:25,image:'🌽',water:'Medium',bestMonths:'June, October',description:'Versatile crop with demand from feed, starch and food processors.'},
+{id:'cotton',name:'Cotton',price:6900,previous:6740,movement:2.37,demand:'High',season:'Kharif',sowing:'April–June',yieldPerAcre:8,image:'🧶',water:'Medium',bestMonths:'April, May',description:'Major cash crop with strong regional ginning and textile demand.'},
+{id:'soybean',name:'Soybean',price:4650,previous:4720,movement:-1.48,demand:'Medium',season:'Kharif',sowing:'June–July',yieldPerAcre:10,image:'🫘',water:'Low',bestMonths:'June',description:'Oilseed suited to moderate rainfall zones and rotation systems.'},
+{id:'groundnut',name:'Groundnut',price:6120,previous:5980,movement:2.34,demand:'High',season:'Kharif/Rabi',sowing:'June–July / Oct',yieldPerAcre:12,image:'🥜',water:'Medium',bestMonths:'June, October',description:'High-value oilseed with robust demand across Gujarat markets.'},
+{id:'onion',name:'Onion',price:2850,previous:2720,movement:4.78,demand:'High',season:'Rabi/Kharif',sowing:'Aug–Sep / Nov',yieldPerAcre:90,image:'🧅',water:'Medium',bestMonths:'August, November',description:'Price-sensitive horticulture crop with large seasonal demand swings.'},
+{id:'tomato',name:'Tomato',price:3100,previous:3350,movement:-7.46,demand:'Medium',season:'Year-round',sowing:'Multiple windows',yieldPerAcre:105,image:'🍅',water:'Medium',bestMonths:'September, October',description:'Perishable crop where timing, logistics and market selection are critical.'},
+{id:'potato',name:'Potato',price:1880,previous:1810,movement:3.87,demand:'High',season:'Rabi',sowing:'October–November',yieldPerAcre:95,image:'🥔',water:'Medium',bestMonths:'October, November',description:'Strong cold-chain and mandi demand with efficient bulk procurement.'},
+{id:'turmeric',name:'Turmeric',price:11800,previous:11550,movement:2.16,demand:'High',season:'Kharif',sowing:'May–June',yieldPerAcre:28,image:'🟠',water:'Medium',bestMonths:'May, June',description:'High-value spice with strong processing and export-linked demand.'},
+{id:'chilli',name:'Chilli',price:9300,previous:9050,movement:2.76,demand:'High',season:'Kharif',sowing:'June–July',yieldPerAcre:12,image:'🌶️',water:'Medium',bestMonths:'June, July',description:'Market-sensitive spice crop with strong trader and processing demand.'},
+{id:'sugarcane',name:'Sugarcane',price:3550,previous:3500,movement:1.43,demand:'High',season:'Annual',sowing:'Feb–Mar / Oct',yieldPerAcre:360,image:'🎋',water:'High',bestMonths:'February, October',description:'Long-duration cash crop with organized mill procurement.'}
+];
+export const centres:Centre[]=[
+{id:'vasna',name:'APMC Procurement Centre, Vasna',location:'Vasna, Ahmedabad',district:'Ahmedabad',distance:4.8,hours:'08:00 AM – 06:00 PM',crops:['Rice','Wheat','Maize','Cotton'],queue:32,waiting:42,slots:18,status:'Open',lat:23.001,lng:72.54},
+{id:'anand',name:'Government Procurement Centre, Anand',location:'Anand, Gujarat',district:'Anand',distance:7.2,hours:'08:30 AM – 05:30 PM',crops:['Wheat','Maize','Groundnut'],queue:18,waiting:25,slots:24,status:'Open',lat:22.56,lng:72.96},
+{id:'nadiad',name:'Agricultural Produce Market Committee, Nadiad',location:'Nadiad, Kheda',district:'Kheda',distance:18.4,hours:'08:00 AM – 05:00 PM',crops:['Rice','Wheat','Cotton','Soybean'],queue:51,waiting:68,slots:9,status:'Limited',lat:22.69,lng:72.86},
+{id:'sanand',name:'Farmer Service Procurement Yard, Sanand',location:'Sanand, Ahmedabad',district:'Ahmedabad',distance:29.6,hours:'09:00 AM – 06:00 PM',crops:['Cotton','Groundnut','Maize'],queue:9,waiting:14,slots:31,status:'Open',lat:22.99,lng:72.38},
+{id:'mehmedabad',name:'Taluka Agricultural Procurement Centre, Mehmedabad',location:'Mehmedabad, Kheda',district:'Kheda',distance:23.1,hours:'08:00 AM – 05:30 PM',crops:['Rice','Wheat','Onion'],queue:0,waiting:0,slots:42,status:'Open',lat:22.82,lng:72.76}
+];
+export const defaultBooking:Booking={id:'KS-260910-104',token:'A104',crop:'Rice',quantity:10,centre:'APMC Procurement Centre, Vasna',date:'10 Sep 2026',time:'10:00 AM',income:21500,status:'Slot Confirmed'};
+export const price7=[['04 Sep',2050],['05 Sep',2085],['06 Sep',2070],['07 Sep',2100],['08 Sep',2080],['09 Sep',2120],['10 Sep',2150]].map(([date,price])=>({date,price}));
+export const price30=Array.from({length:30},(_,i)=>({date:`${i+1}`,price:1980+Math.round(Math.sin(i/3)*70)+i*6}));
+export const demandMonths=[{m:'Jan',d:62},{m:'Feb',d:58},{m:'Mar',d:55},{m:'Apr',d:49},{m:'May',d:57},{m:'Jun',d:72},{m:'Jul',d:84},{m:'Aug',d:91},{m:'Sep',d:88},{m:'Oct',d:76},{m:'Nov',d:69},{m:'Dec',d:64}];

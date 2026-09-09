@@ -1,0 +1,2 @@
+import {Sprout} from 'lucide-react';
+export default function Logo({dark=false}:{dark?:boolean}){return <div className="flex items-center gap-2.5"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-leaf text-white shadow-sm"><Sprout size={22}/></div><div><div className={`font-display text-lg font-extrabold ${dark?'text-white':'text-ink'}`}>Kisan <span className="text-leaf">Suvidha</span></div><div className={`text-[10px] font-semibold ${dark?'text-white/60':'text-[#829088]'}`}>ONE PLATFORM. BRIGHTER TOMORROWS.</div></div></div>}

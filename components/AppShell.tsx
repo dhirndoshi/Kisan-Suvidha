@@ -1,0 +1,3 @@
+'use client';
+import {ReactNode,useState} from 'react';import Sidebar from './Sidebar';import Topbar from './Topbar';import MobileNav from './MobileNav';
+export default function AppShell({children}:{children:ReactNode}){const[open,setOpen]=useState(false);return <div className="min-h-screen bg-[#f6faf7]"><div className="flex min-h-screen"><Sidebar open={open} onClose={()=>setOpen(false)}/><div className="min-w-0 flex-1"><Topbar onMenu={()=>setOpen(true)}/><main className="mx-auto w-full max-w-[1600px] p-4 pb-24 sm:p-6 sm:pb-24 lg:p-8 lg:pb-8">{children}</main></div><MobileNav/></div>{open&&<button aria-label="Close navigation" onClick={()=>setOpen(false)} className="fixed inset-0 z-40 bg-[#10231a]/30 lg:hidden"/>}</div>}
